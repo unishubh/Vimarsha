@@ -1,0 +1,19 @@
+{
+  "name": "vimarsha",
+  "version": "1.0.0",
+  "description": "Reflect on your browsing habits",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unishubh/Vimarsha.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/unishubh/Vimarsha/issues"
+  },
+  "homepage": "https://github.com/unishubh/Vimarsha#readme"
+}

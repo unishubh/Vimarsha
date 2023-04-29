@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/unishubh/Vimarsha/issues"
   },
-  "homepage": "https://github.com/unishubh/Vimarsha#readme"
+  "homepage": "https://github.com/unishubh/Vimarsha#readme",
+  "dependencies": {
+    "chrom": "^0.0.0",
+    "chrome-extensions": "^1.0.0",
+    "chrome-launcher": "^0.15.2",
+    "gulp": "^4.0.2"
+  }
 }

@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "My Chrome Extension",
+  "version": "1.0",
+
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+
+  "permissions": [
+    "storage"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "popup.js"
+      ],
+      "run_at": "document_end"
+    }
+  ]
+}

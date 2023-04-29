@@ -1,0 +1,75 @@
+<!-- newtab.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Saved Links</title>
+    <style>
+        /* Style the list of saved links */
+        #saved-links {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        /* Style the link items */
+        .link-item {
+            margin-bottom: 10px;
+        }
+
+        /* Style the link title */
+        .link-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        /* Style the link url */
+        .link-url {
+            color: blue;
+        }
+
+        /* Style the link category */
+        .link-category {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+<h1>My Saved Links</h1>
+<ul id="saved-links"></ul>
+
+<script>
+    // Retrieve the saved links from local storage
+    chrome.storage.local.get('savedLinks', function(result) {
+        let savedLinks = result.savedLinks || []; // If there are no saved links yet, create an empty array
+
+        // Loop through the saved links and add them to the list
+        let savedLinksList = document.getElementById('saved-links');
+        for (let i = 0; i < savedLinks.length; i++) {
+            let linkItem = document.createElement('li');
+
+            // Create the link title element
+            let linkTitle = document.createElement('div');
+            linkTitle.classList.add('link-title');
+            linkTitle.textContent = savedLinks[i].url;
+            linkItem.appendChild(linkTitle);
+
+            // Create the link url element
+            let linkUrl = document.createElement('a');
+            linkUrl.classList.add('link-url');
+            linkUrl.setAttribute('href', savedLinks[i].url);
+            linkUrl.setAttribute('target', '_blank');
+            linkUrl.textContent = savedLinks[i].url;
+            linkItem.appendChild(linkUrl);
+
+            // Create the link category element
+            let linkCategory = document.createElement('div');
+            linkCategory.classList.add('link-category');
+            linkCategory.textContent = savedLinks[i].category;
+            linkItem.appendChild(linkCategory);
+
+            savedLinksList.appendChild(linkItem);
+        }
+    });
+</script>
+</body>
+</html>
